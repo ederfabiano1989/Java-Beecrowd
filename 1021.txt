@@ -1,0 +1,44 @@
+/*
+Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário. A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto. As notas consideradas são de 100, 50, 20, 10, 5, 2. As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01. A seguir mostre a relação de notas necessárias.
+
+Entrada
+O arquivo de entrada contém um valor de ponto flutuante N (0 ≤ N ≤ 1000000.00).
+
+Saída
+Imprima a quantidade mínima de notas e moedas necessárias para trocar o valor inicial, conforme exemplo fornecido.
+
+Obs: Utilize ponto (.) para separar a parte decimal.
+
+
+*/
+
+
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Valor{
+  public static void main(String []args){
+    Scanner t = new Scanner(System.in);
+
+    double valor = t.nextDouble();
+
+    double[] notas = {100, 50, 20, 10, 5, 2};
+    double[] moedas = { 1, 0.50, 0.25, 0.10, 0.05};
+
+    System.out.println("NOTAS:");
+        for (double nota:notas){
+        int resp = (int) Math.floor(valor/nota);
+        System.out.printf( resp + " nota(s) de R$ %.2f\n", nota);
+        valor %= nota;
+    }
+
+    System.out.println("MOEDAS:");
+    for(double moeda:moedas){
+      int resp1 = (int) Math.floor(valor/moeda);
+      System.out.printf(resp1 + " moeda(s) de R$ %.2f\n", moeda);
+      valor %= moeda;
+    }
+    double resp3 = valor/0.01;
+    System.out.printf("%.0f moeda(s) de R$ 0.01\n", resp3);
+  }
+}

@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner t = new Scanner(System.in);
+        
+        int a = t.nextInt();
+        int b = t.nextInt();
+        int c = t.nextInt();
+        int d = t.nextInt();
+        
+        int soma1 = c+d;
+        int soma2 = a+b;
+        int par = a%2;
+        
+        if ((b>c)&& (d>a) && (soma1 > soma2) && (c>0) &&(d>0) && (par==0)){
+            System.out.println("Valores aceitos");
+        }else{
+            System.out.println("Valore nao aceitos");
+        }
+    }
+}

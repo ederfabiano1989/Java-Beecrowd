@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner t = new Scanner(System.in);
+        
+        double a = t.nextDouble();
+        double b = t.nextDouble();
+        double c = t.nextDouble();
+        
+       
+       // Math.sqrt();
+        double b2 = Math.pow(b,2);
+        double del = 4*a*c;
+        double delta = Math.sqrt(b2-del);
+        
+        double r1 = (-b + delta)/(2*a);
+        double r2 = (-b - delta)/(2*a);
+        
+        if (a>0 && delta >= 0){
+            System.out.printf("R1 = %.5f\n", r1); 
+            System.out.printf("R2 = %.5f\n", r2);
+            
+        }else{
+            System.out.println("Impossivel calcular");
+        }
+        
+    }
+}
